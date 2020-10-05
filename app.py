@@ -15,14 +15,15 @@ warriors = []
 # converting experience into boolean value, creating exp,inexp list of players, and converting height into integer
 def clean_data():
     for my_players in players:
+        my_players['height'] = int(my_players['height'].split()[0])
         if my_players['experience'] == 'YES':
             my_players['experience'] = True
             exp_players.append(my_players)
         else: 
             my_players['experience'] = False
             inexp_players.append(my_players)
+    
         
-        my_players['height'] = int(my_players['height'].split()[0])
 
 # equally distributing exp,inexp players into the 3 teams
 def sort_teams():
