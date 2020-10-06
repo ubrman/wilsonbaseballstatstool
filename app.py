@@ -12,10 +12,11 @@ panthers = []
 bandits = []
 warriors = []
 
-# converting experience into boolean value, creating exp,inexp list of players, and converting height into integer
+# converting experience into boolean value, creating exp,inexp list of players, and converting height into integer, cleaned up "and" in guardians
 def clean_data():
     for my_players in players:
         my_players['height'] = int(my_players['height'].split()[0])
+        my_players['guardians'] = my_players['guardians'].replace(' and',',')
         if my_players['experience'] == 'YES':
             my_players['experience'] = True
             exp_players.append(my_players)
